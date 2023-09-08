@@ -39,7 +39,7 @@ class ThreeVGGDo(model.CNNModel):
         model_tbd.add(Dropout(0.5))
         model_tbd.add(Dense(1, activation='sigmoid'))
         # compile model
-        opt = SGD(lr=lr, momentum=0.9)
+        opt = SGD(learning_rate=lr, momentum=0.9)
         model_tbd.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
         return model_tbd
 

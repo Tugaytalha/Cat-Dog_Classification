@@ -32,7 +32,7 @@ class TwoVGG(model.CNNModel):
         model_tbd.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
         model_tbd.add(Dense(1, activation='sigmoid'))
         # compile model
-        opt = SGD(lr=0.001, momentum=0.9)
+        opt = SGD(learning_rate=0.001, momentum=0.9)
         model_tbd.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
         return model_tbd
 
